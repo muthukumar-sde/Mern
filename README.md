@@ -1,11 +1,16 @@
 # Usage with React and Redux
 Mern Stack 
+
+## Installing React 
+
+```js
 npm install -g create-react-app
 create-react-app project
 cd project
 npm start
+```
 
-## Installing React Redux
+## Installing Redux
 
 ```js
 npm install --save redux react-redux react-router-redux redux-thunk react-router-dom axios 
