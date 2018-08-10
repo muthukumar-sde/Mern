@@ -1,6 +1,9 @@
-# Usage with React and Reduc
+# Usage with React and Redux
 Mern Stack 
-We will use React to build our simple todo app.
+npm install -g create-react-app
+create-react-app project
+cd project
+npm start
 
 ## Installing React Redux
 
