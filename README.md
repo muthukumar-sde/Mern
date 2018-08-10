@@ -4,10 +4,12 @@ We will use React to build our simple todo app.
 
 ## Installing React Redux
 
-```
+```js
 npm install --save react-redux react-router-redux redux-thunk axios
+```
 
 ## React Redux connection 
+
 #### `src/index.js`
 
 ```js
