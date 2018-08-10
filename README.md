@@ -5,7 +5,7 @@ We will use React to build our simple todo app.
 ## Installing React Redux
 
 ```js
-npm install --save react-redux react-router-redux redux-thunk axios
+npm install --save redux react-redux react-router-redux redux-thunk react-router-dom axios 
 ```
 
 ## React Redux connection 
@@ -56,7 +56,7 @@ const store = createStore(
     composedEnhancers
   );
   
-export default store;
+export default store;   
 ```
 
 #### `src/redux/config.js`
@@ -159,8 +159,7 @@ const initialState = {
 ```js
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { dashboard } from '../../redux/actions/dashboardAction';
-
+import { dashboard } from '../redux/actions/dashboardAction';
 
 const mapStateToProps = (state) => {
   return {
@@ -180,12 +179,13 @@ const Dashboard = class Dashboard extends Component {
   constructor(props){
     super(props);
     this.state = {
-      welcome : ''
+      welcome : 'Happy React'  
     }
   }
   componentDidMount(){
-    this.props.dashboard('Welcome');
+     this.props.dashboard('Welcome');  
   }
+  
   componentWillReceiveProps(nextprops){ 
     this.setState({
       welcome: nextprops.dashboardResult
@@ -194,7 +194,7 @@ const Dashboard = class Dashboard extends Component {
 
   render() {
     return (      
-        <div className="container-fluid" style={{height:'750px'}}>
+        <div>
             <h1>{this.state.welcome} </h1>   
         </div>    
       )
@@ -214,29 +214,37 @@ export default DashboardConnected
 ```js
 import React, { Component } from 'react';
 import { BrowserRouter, Route , Switch } from 'react-router-dom';
-import Dashboard from './views/Dashboard/Dashboard';
+import Dashboard from './views/Dashboard';
+import logo from './logo.svg';
+import './App.css';
+
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      isAuthenticated : false
-    }   
+    this.state = {}   
   }
-
   render() {
     return (
-      <div>
-            <BrowserRouter>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+		 <BrowserRouter>
               <Switch>    
                 <Route path="/" component={Dashboard} /> 
               </Switch>
-            </BrowserRouter>
+         </BrowserRouter>
       </div>
     );
   }
 }
 
 export default App;
+
 ```
 
 Read the [complete source code for this tutorial](ExampleTodoList.md) to better internalize the knowledge you have gained. Then, head straight to the [advanced tutorial](../advanced/README.md) to learn how to handle network requests and routing!
