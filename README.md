@@ -257,7 +257,7 @@ export default App;
 
 ## Express Cross browser
 
-#### `src/index.js`
+#### `server/app.js`
 
 ```js
 const cors = require('cors');
