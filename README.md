@@ -255,4 +255,19 @@ export default App;
 
 ```
 
+## Express Cross browser
+
+#### `src/index.js`
+
+```js
+const cors = require('cors');
+
+//app.use(cors());
+
+app.use(cors({
+  origin: 'http://localhost:3333',
+  credentials: true
+}));
+```
+
 Read the [complete source code for this tutorial](ExampleTodoList.md) to better internalize the knowledge you have gained. Then, head straight to the [advanced tutorial](../advanced/README.md) to learn how to handle network requests and routing!
